@@ -1,56 +1,48 @@
 # Site
-name: 'ultraviollette'
+title: "Ultraviollette's homepage" 
 description: 'A GitHub Blog of Melissa Lee'
-logo: 'assets/images/LogoMakr_7EuRuE.png'
-favicon: 'assets/images/LogoMakr_7EuRuE.png'
-baseurl: ''
-url: 'https://ultraviollette.github.io'
-disqus: 'demowebsite'
-email: 'plhw90@gmail.com'
-mailchimp-list: ''
-
-include: ["_pages"]
-permalink: /:title/
+logo: '/assets/images/LogoMakr_7EuRuE.png'
+favicon: '/assets/images/LogoMakr_7EuRuE.png'
+baseurl: "" 
+url: "https://ultraviollette.github.io"
 
 # Plugins
-plugins: 
+plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-paginate
   - jekyll-seo-tag
-  
-authors:
-    mel:
-      name:           Melly
-      site:           https://www.ultraviollette.ml
-      bio:            ""
-      email:          plhw90@gmail.com
+
+# Pagination
+paginate: 10
+paginate_path: "/blog/page:num/"
 
 # Defaults
 defaults:
-
-  # all posts
   - scope:
       path: "_posts"
     values:
-      layout: post
-      author: sal
-      avatar: /assets/images/avatar1.jpg
-      
-  # all pages
+      layout: "post"
+      author: "mel"
+      avatar: "/assets/images/LogoMakr_7EuRuE.png"
+
   - scope:
-      path: "_pages"
+      path: ""
     values:
-      layout: page
-      
-# Syntax
+      layout: "page"
+
+# Authors
+authors:
+  mel:
+    name: "Melly"
+    email: "plhw90@gmail.com"
+    bio: "Python & Data Scraper Enthusiast"
+
+# Build Settings
+theme: jekyll-theme-minimal
 markdown: kramdown
 highlighter: rouge
+permalink: /:title/
 
-# Paginate
-paginate: 10
-
-
-
-# Exclude metadata and development time dependencies (like Grunt plugins)
-exclude: [README.markdown, package.json, grunt.js, Gruntfile.js, Gruntfile.coffee, node_modules]
+include: ["_pages"]
+exclude: [README.markdown, package.json, grunt.js, Gruntfile.js, Gruntfile.coffee, node_modules, vendor]
